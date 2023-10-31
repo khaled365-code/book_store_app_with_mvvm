@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.6
   animated_text_kit: ^4.2.2
+  font_awesome_flutter: ^10.6.0
+
 
 dev_dependencies:
   flutter_test:
