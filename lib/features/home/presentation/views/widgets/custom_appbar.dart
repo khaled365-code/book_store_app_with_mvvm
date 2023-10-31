@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 80),
+      padding: const EdgeInsets.only(left: 20,right: 20,top: 70),
       child: Row(
         children: [
           Text('K o t o b i',style: TextStyle(fontSize: 25,fontFamily: 'Gara',fontWeight: FontWeight.bold),),
