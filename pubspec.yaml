@@ -40,6 +40,7 @@ dependencies:
   font_awesome_flutter: ^10.6.0
 
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,6 +83,10 @@ flutter:
      - family: Gara
        fonts:
          - asset: assets/fonts/EBGaramond-Italic-VariableFont_wght.ttf
+     - family: Sectra
+       fonts:
+         - asset: assets/fonts/GT Sectra Fine Regular.ttf
+
 
   #   - family: Trajan Pro
   #     fonts:
