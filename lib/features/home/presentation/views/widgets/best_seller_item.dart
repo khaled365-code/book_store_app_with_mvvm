@@ -1,5 +1,7 @@
 
+import 'package:books_app/core/utilis/app_routing.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utilis/asset_data.dart';
@@ -12,8 +14,11 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Padding(
-      padding: const EdgeInsets.only(left: 10),
+    return GestureDetector(
+      onTap: ()
+      {
+        GoRouter.of(context).push(AppRouter.Kbookdetailsview);
+      },
       child: SizedBox(
         height: 125,
         child: Row(

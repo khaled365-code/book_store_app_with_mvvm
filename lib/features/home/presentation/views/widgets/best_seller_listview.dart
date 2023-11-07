@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'best_seller_item.dart';
 
@@ -10,7 +9,7 @@ class BestSellerListView extends StatelessWidget {
   Widget build(BuildContext context)
   {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 10),
+      padding:  EdgeInsets.symmetric(horizontal: 20),
       child: ListView.separated(
         padding: EdgeInsets.zero,
             physics: NeverScrollableScrollPhysics(),

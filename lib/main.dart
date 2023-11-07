@@ -1,6 +1,6 @@
 import 'package:books_app/constants.dart';
+import 'package:books_app/core/utilis/app_routing.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'features/splash/presentation/views/splash_screen.dart';
 
@@ -14,12 +14,13 @@ class BooklyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: kPrimaryColor,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: SplashScreen());
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: kPrimaryColor,
+      ),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
 
