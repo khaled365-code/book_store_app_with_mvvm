@@ -14,7 +14,7 @@ class SearchListView extends StatelessWidget {
             padding: EdgeInsets.zero,
             shrinkWrap: true,
             physics:  NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => BestSellerItem(),
+            itemBuilder: (context, index) => Text('data'),
             separatorBuilder: (context, index) => SizedBox(height: 15,),
             itemCount: 100
         ),

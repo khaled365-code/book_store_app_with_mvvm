@@ -1,5 +1,7 @@
 
 import 'package:books_app/core/utilis/app_routing.dart';
+import 'package:books_app/features/home/data/models/book_model/book_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,6 +13,10 @@ import 'book_rate_item.dart';
 
 class BestSellerItem extends StatelessWidget {
 
+
+  final BookModel bookModel;
+
+  const BestSellerItem({super.key, required this.bookModel});
   @override
   Widget build(BuildContext context) {
 
@@ -24,15 +30,18 @@ class BestSellerItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          AspectRatio(
-          aspectRatio: 2.5/4,
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                image: DecorationImage(image: AssetImage(AssetsData.testImage),fit: BoxFit.fill)
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: AspectRatio(
+                  aspectRatio: 2.5 / 4,
+                  child: CachedNetworkImage(
+                    imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+                    errorWidget: (context, url, error) => Center(
+                      child: Icon(Icons.gpp_maybe),
+                    ),
+                    fit: BoxFit.fill,
+                  )),
             ),
-          ),
-        ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 30,top: 5),
@@ -44,7 +53,7 @@ class BestSellerItem extends StatelessWidget {
                     SizedBox(
                         width: MediaQuery.of(context).size.width * .5,
                         child: Text(
-                          'Harry Potter and the Goblet of Fire',
+                          bookModel.volumeInfo.title!,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: Styles.textStyle20.copyWith(
@@ -52,19 +61,22 @@ class BestSellerItem extends StatelessWidget {
                           ),
                         )),
                     const SizedBox(height: 3,),
-                    Text('J.K. Rowling',style: Styles.textStyle14.copyWith(
+                    Text(bookModel.volumeInfo.authors![0],style: Styles.textStyle14.copyWith(
                       color: Color(0xff707070)
                     ),),
                     const SizedBox(height: 3,),
                     Row(
                       children:
                       [
-                        Text(r'19.99 $',style: Styles.textStyle20.copyWith(
+                        Text('Free book',style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold
                         )),
 
                         Spacer(),
-                        BookRateItem(),
+                        BookRateItem(
+                          rating: bookModel.volumeInfo.averageRating?? 2.5,
+                          count: bookModel.volumeInfo.ratingsCount ?? 2530,
+                        ),
 
 
 

@@ -7,8 +7,10 @@ import '../../../../../core/utilis/styles.dart';
 
 class BookRateItem extends StatelessWidget {
 
-  const BookRateItem({this.mainAxisAlignment=MainAxisAlignment.start}) ;
+  const BookRateItem({this.mainAxisAlignment=MainAxisAlignment.start, required this.rating, required this.count}) ;
   final MainAxisAlignment mainAxisAlignment;
+  final num rating;
+  final int count;
   @override
   Widget build(BuildContext context) {
 
@@ -18,11 +20,11 @@ class BookRateItem extends StatelessWidget {
       [
         Icon(FontAwesomeIcons.solidStar,color: Color(0xffFFDD4F),size: 14,),
         SizedBox(width: 6.3,),
-        Text('4.8',style: Styles.textStyle16,),
+        Text(rating.toString(),style: Styles.textStyle16,),
         SizedBox(width: 5,),
         Opacity(
           opacity: .5,
-          child: Text('(2390)',style: Styles.textStyle14.copyWith(
+          child: Text('$count',style: Styles.textStyle14.copyWith(
             fontWeight: FontWeight.w600
           ),),
         ),
