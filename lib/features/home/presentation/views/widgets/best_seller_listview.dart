@@ -12,6 +12,7 @@ class BestSellerListView extends StatelessWidget {
       padding:  EdgeInsets.symmetric(horizontal: 20),
       child: ListView.separated(
         padding: EdgeInsets.zero,
+            shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) => BestSellerItem(),
             separatorBuilder: (context, index) => SizedBox(height: 15,),
