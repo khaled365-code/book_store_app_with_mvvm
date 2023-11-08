@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 class BookItem extends StatelessWidget {
 
 
-  const BookItem({super.key});
+  final String imageUrl;
+
+  const BookItem({super.key, required this.imageUrl});
   @override
   Widget build(BuildContext context) {
     
@@ -16,7 +18,7 @@ class BookItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(image: AssetImage(AssetsData.testImage),fit: BoxFit.fill)
+            image: DecorationImage(image: NetworkImage(imageUrl),fit: BoxFit.fill)
           ),
         ),
       );
