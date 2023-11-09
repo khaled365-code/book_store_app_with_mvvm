@@ -2,8 +2,10 @@ import 'package:books_app/core/widgets/custom_error_widget.dart';
 import 'package:books_app/features/home/presentation/view%20model/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../../core/widgets/loading_widget.dart';
+import '../../../../../../core/utilis/app_routing.dart';
+import '../../../../../../core/widgets/loading_widget.dart';
 import 'book_item.dart';
 
 
@@ -28,8 +30,15 @@ class BooksHoriListView extends StatelessWidget {
                 child: ListView.separated(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => BookItem(
-                    imageUrl: state.bookList[index].volumeInfo.imageLinks.thumbnail,
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: ()
+                    {
+                      GoRouter.of(context).push(AppRouter.Kbookdetailsview,extra: state.bookList[index]);
+
+                    },
+                    child: BookItem(
+                      imageUrl: state.bookList[index].volumeInfo.imageLinks?.thumbnail ?? '',
+                    ),
                   ),
                   separatorBuilder: (context, index) => const SizedBox(width: 25,),
                   itemCount: state.bookList.length,

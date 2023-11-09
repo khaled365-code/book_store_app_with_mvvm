@@ -1,6 +1,6 @@
 import 'package:books_app/constants.dart';
 import 'package:books_app/core/utilis/app_routing.dart';
-import 'package:books_app/features/home/presentation/views/home_view.dart';
+import 'package:books_app/features/home/presentation/views/widgets/home_view_widgets/home_view.dart';
 import 'package:books_app/features/splash/presentation/views/widgets/splash_body.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

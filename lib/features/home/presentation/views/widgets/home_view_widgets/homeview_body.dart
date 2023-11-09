@@ -1,10 +1,10 @@
 
 
-import 'package:books_app/features/home/presentation/views/widgets/best_seller_item.dart';
-import 'package:books_app/features/home/presentation/views/widgets/custom_appbar.dart';
+import 'package:books_app/features/home/presentation/views/widgets/home_view_widgets/best_seller_item.dart';
+import 'package:books_app/features/home/presentation/views/widgets/home_view_widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utilis/styles.dart';
+import '../../../../../../core/utilis/styles.dart';
 import 'books_horizontal_listview.dart';
 import 'best_seller_listview.dart';
 

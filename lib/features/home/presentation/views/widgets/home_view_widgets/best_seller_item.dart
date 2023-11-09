@@ -5,9 +5,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../constants.dart';
-import '../../../../../core/utilis/asset_data.dart';
-import '../../../../../core/utilis/styles.dart';
+import '../../../../../../constants.dart';
+import '../../../../../../core/utilis/asset_data.dart';
+import '../../../../../../core/utilis/styles.dart';
 import 'book_rate_item.dart';
 
 
@@ -23,7 +23,7 @@ class BestSellerItem extends StatelessWidget {
     return GestureDetector(
       onTap: ()
       {
-        GoRouter.of(context).push(AppRouter.Kbookdetailsview);
+        GoRouter.of(context).push(AppRouter.Kbookdetailsview,extra: bookModel);
       },
       child: SizedBox(
         height: 125,
@@ -35,7 +35,7 @@ class BestSellerItem extends StatelessWidget {
               child: AspectRatio(
                   aspectRatio: 2.5 / 4,
                   child: CachedNetworkImage(
-                    imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+                    imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
                     errorWidget: (context, url, error) => Center(
                       child: Icon(Icons.gpp_maybe),
                     ),
@@ -61,7 +61,7 @@ class BestSellerItem extends StatelessWidget {
                           ),
                         )),
                     const SizedBox(height: 3,),
-                    Text(bookModel.volumeInfo.authors![0],style: Styles.textStyle14.copyWith(
+                    Text(bookModel.volumeInfo.authors![0],overflow:TextOverflow.ellipsis,maxLines:2,style: Styles.textStyle14.copyWith(
                       color: Color(0xff707070)
                     ),),
                     const SizedBox(height: 3,),
@@ -75,7 +75,7 @@ class BestSellerItem extends StatelessWidget {
                         Spacer(),
                         BookRateItem(
                           rating: bookModel.volumeInfo.averageRating?? 2.5,
-                          count: bookModel.volumeInfo.ratingsCount ?? 2530,
+                          count: bookModel.volumeInfo.ratingsCount ?? 2550,
                         ),
 
 

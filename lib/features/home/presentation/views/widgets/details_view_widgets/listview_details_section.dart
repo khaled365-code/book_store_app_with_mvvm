@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utilis/styles.dart';
-import 'details_list_view.dart';
+import '../../../../../../core/utilis/styles.dart';
+import 'similar_books_list_view.dart';
 
 class SuggestionsSection extends StatelessWidget {
 
@@ -14,7 +14,7 @@ class SuggestionsSection extends StatelessWidget {
        children:
        [
          Padding(
-           padding: EdgeInsets.only(left: 16),
+           padding: EdgeInsets.only(left: 16,bottom: 10),
            child: Text(
              'You can also like',
              style:
@@ -22,9 +22,9 @@ class SuggestionsSection extends StatelessWidget {
            ),
          ),
          const SizedBox(
-           height: 20,
+           height: 4,
          ),
-         DetailsListView(),
+         SimilarBooksListView(),
        ],
      );
   }

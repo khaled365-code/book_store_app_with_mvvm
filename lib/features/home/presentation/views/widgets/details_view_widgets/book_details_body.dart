@@ -1,8 +1,9 @@
-import 'package:books_app/features/home/presentation/views/widgets/book_rating_details_section.dart';
-import 'package:books_app/features/home/presentation/views/widgets/you_can_like_details_section.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../data/models/book_model/book_model.dart';
 import 'custom_book_details_appbar.dart';
+import 'book_rating_details_section.dart';
+import 'listview_details_section.dart';
 
 
 
@@ -10,6 +11,9 @@ import 'custom_book_details_appbar.dart';
 class BookDetailsBody extends StatelessWidget {
 
 
+  final BookModel bookModel;
+
+  const BookDetailsBody({super.key, required this.bookModel});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,9 @@ class BookDetailsBody extends StatelessWidget {
             child: Column(
           children: [
             AppBarBookDetails(),
-            BookRatingSection(),
+            BookRatingSection(
+              bookModel: bookModel,
+            ),
             Expanded(
               child: const SizedBox(
                 height: 35,
