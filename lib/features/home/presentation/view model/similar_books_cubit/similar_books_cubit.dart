@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:books_app/features/home/data/models/book_model/book_model.dart';
 import 'package:meta/meta.dart';
 
+import '../../../../../core/utilis/book_model/book_model.dart';
 import '../../../data/repos/home_repo_implementation.dart';
 
 part 'similar_books_state.dart';

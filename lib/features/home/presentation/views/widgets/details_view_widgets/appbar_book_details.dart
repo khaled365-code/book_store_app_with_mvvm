@@ -1,10 +1,13 @@
 
 
 
+import 'package:books_app/features/home/presentation/views/widgets/home_view_widgets/home_view.dart';
 import 'package:flutter/material.dart';
 
 class AppBarBookDetails extends StatelessWidget {
 
+
+  const AppBarBookDetails({super.key});
   @override
   Widget build(BuildContext context)
   {
@@ -16,12 +19,12 @@ class AppBarBookDetails extends StatelessWidget {
         [
           IconButton(
               onPressed: (){
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView(),));
               }
-              , icon: Icon(Icons.close)),
+              , icon: const Icon(Icons.close)),
           IconButton(
               onPressed: (){}
-              , icon: Icon(Icons.shopping_cart_outlined)),
+              , icon: const Icon(Icons.shopping_cart_outlined)),
 
         ],
       ),

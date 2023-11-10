@@ -1,10 +1,15 @@
 
+import 'package:books_app/core/utilis/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/utilis/styles.dart';
+import '../../../../../../core/utilis/styles/styles.dart';
 import 'similar_books_list_view.dart';
 
 class SuggestionsSection extends StatelessWidget {
+
+  final BookModel bookModel;
+
+  const SuggestionsSection({super.key, required this.bookModel});
 
   @override
   Widget build(BuildContext context)
@@ -14,7 +19,7 @@ class SuggestionsSection extends StatelessWidget {
        children:
        [
          Padding(
-           padding: EdgeInsets.only(left: 16,bottom: 10),
+           padding: const EdgeInsets.only(left: 16,bottom: 10,top: 15),
            child: Text(
              'You can also like',
              style:
@@ -24,7 +29,9 @@ class SuggestionsSection extends StatelessWidget {
          const SizedBox(
            height: 4,
          ),
-         SimilarBooksListView(),
+         SimilarBooksListView(
+           bookModel: bookModel ,
+         ),
        ],
      );
   }

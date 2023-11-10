@@ -9,21 +9,23 @@ import 'best_seller_item.dart';
 
 class BestSellerListView extends StatelessWidget {
 
+
+  const BestSellerListView({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
         if (state is NewestBooksSuccessState) {
           return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ListView.separated(
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) => BestSellerItem(
                   bookModel: state.booksList[index],
                 ),
-                separatorBuilder: (context, index) => SizedBox(
+                separatorBuilder: (context, index) => const SizedBox(
                       height: 15,
                     ),
                 itemCount: state.booksList.length),

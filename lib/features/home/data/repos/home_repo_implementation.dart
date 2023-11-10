@@ -1,10 +1,11 @@
 
 import 'package:books_app/core/errors/failure.dart';
-import 'package:books_app/core/utilis/api_service.dart';
-import 'package:books_app/features/home/data/models/book_model/book_model.dart';
+import 'package:books_app/core/utilis/Api%20Service/api_service.dart';
 import 'package:books_app/features/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+
+import '../../../../core/utilis/book_model/book_model.dart';
 
 class HomeRepoImplementation implements HomeRepo {
 

@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../../../core/utilis/styles.dart';
+import '../../../../../../core/utilis/styles/styles.dart';
 
 
 class BookRateItem extends StatelessWidget {
 
-  const BookRateItem({this.mainAxisAlignment=MainAxisAlignment.start, required this.rating, required this.count}) ;
+  const BookRateItem({super.key, this.mainAxisAlignment=MainAxisAlignment.start, required this.rating, required this.count}) ;
   final MainAxisAlignment mainAxisAlignment;
   final num rating;
   final int count;
@@ -18,10 +18,10 @@ class BookRateItem extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       children:
       [
-        Icon(FontAwesomeIcons.solidStar,color: Color(0xffFFDD4F),size: 14,),
-        SizedBox(width: 6.3,),
+        const Icon(FontAwesomeIcons.solidStar,color: Color(0xffFFDD4F),size: 14,),
+        const SizedBox(width: 6.3,),
         Text(rating.toString(),style: Styles.textStyle16,),
-        SizedBox(width: 5,),
+        const SizedBox(width: 5,),
         Opacity(
           opacity: .5,
           child: Text('$count',style: Styles.textStyle14.copyWith(

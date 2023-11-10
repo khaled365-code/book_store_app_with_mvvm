@@ -1,13 +1,12 @@
 
-import 'package:books_app/core/utilis/app_routing.dart';
-import 'package:books_app/features/home/data/models/book_model/book_model.dart';
+import 'package:books_app/core/utilis/Routing/app_routing.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../../constants.dart';
-import '../../../../../../core/utilis/asset_data.dart';
-import '../../../../../../core/utilis/styles.dart';
+import '../../../../../../core/utilis/book_model/book_model.dart';
+import '../../../../../../core/utilis/styles/styles.dart';
 import 'book_rate_item.dart';
 
 
@@ -36,7 +35,7 @@ class BestSellerItem extends StatelessWidget {
                   aspectRatio: 2.5 / 4,
                   child: CachedNetworkImage(
                     imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
-                    errorWidget: (context, url, error) => Center(
+                    errorWidget: (context, url, error) => const Center(
                       child: Icon(Icons.gpp_maybe),
                     ),
                     fit: BoxFit.fill,
@@ -60,11 +59,11 @@ class BestSellerItem extends StatelessWidget {
                             fontFamily: kSecondaryFont
                           ),
                         )),
-                    const SizedBox(height: 3,),
-                    Text(bookModel.volumeInfo.authors![0],overflow:TextOverflow.ellipsis,maxLines:2,style: Styles.textStyle14.copyWith(
-                      color: Color(0xff707070)
+                    const SizedBox(height: 8,),
+                    Text(bookModel.volumeInfo.authors![0],overflow:TextOverflow.ellipsis,maxLines:1,style: Styles.textStyle14.copyWith(
+                      color: const Color(0xff707070)
                     ),),
-                    const SizedBox(height: 3,),
+                    const SizedBox(height: 8,),
                     Row(
                       children:
                       [
@@ -72,7 +71,7 @@ class BestSellerItem extends StatelessWidget {
                           fontWeight: FontWeight.bold
                         )),
 
-                        Spacer(),
+                        const Spacer(),
                         BookRateItem(
                           rating: bookModel.volumeInfo.averageRating?? 2.5,
                           count: bookModel.volumeInfo.ratingsCount ?? 2550,

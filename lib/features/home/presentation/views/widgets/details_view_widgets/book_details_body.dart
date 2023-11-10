@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/book_model/book_model.dart';
-import 'custom_book_details_appbar.dart';
-import 'book_rating_details_section.dart';
-import 'listview_details_section.dart';
+import '../../../../../../core/utilis/book_model/book_model.dart';
+import 'appbar_book_details.dart';
+import 'book_rating_section.dart';
+import 'suggestions_section.dart';
 
 
 
@@ -19,7 +19,7 @@ class BookDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return CustomScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverFillRemaining(
             child: Column(
@@ -29,11 +29,10 @@ class BookDetailsBody extends StatelessWidget {
               bookModel: bookModel,
             ),
             Expanded(
-              child: const SizedBox(
-                height: 35,
+              child: SuggestionsSection(
+                bookModel: bookModel,
               ),
             ),
-            SuggestionsSection(),
             const SizedBox(
               height: 25,
             ),

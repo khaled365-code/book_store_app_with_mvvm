@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 
-import '../../constants.dart';
+import '../../../constants.dart';
 
 abstract class Styles
 {
@@ -23,6 +23,11 @@ abstract class Styles
   static const textStyle16=TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
+  );
+  static const textStyle26=TextStyle(
+      fontSize: 26,
+      fontWeight: FontWeight.normal,
+      fontFamily: kSecondaryFont
   );
   static const textStyle30=TextStyle(
       fontSize: 30,

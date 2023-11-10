@@ -1,6 +1,5 @@
 
 
-import 'package:books_app/core/utilis/asset_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +19,7 @@ class BookItem extends StatelessWidget {
           aspectRatio: 2.3/4,
           child: CachedNetworkImage(
             imageUrl: imageUrl,
-            errorWidget: (context, url, error) => Center(child: Icon(Icons.gpp_maybe),),
+            errorWidget: (context, url, error) => const Center(child: Icon(Icons.gpp_maybe),),
             fit: BoxFit.fill,
 
 

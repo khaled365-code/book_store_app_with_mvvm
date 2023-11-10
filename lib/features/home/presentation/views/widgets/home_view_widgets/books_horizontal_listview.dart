@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/utilis/app_routing.dart';
+import '../../../../../../core/utilis/Routing/app_routing.dart';
 import '../../../../../../core/widgets/loading_widget.dart';
 import 'book_item.dart';
 
@@ -22,13 +22,13 @@ class BooksHoriListView extends StatelessWidget {
           {
              return Padding(
               padding: const EdgeInsets.only(left: 5, right: 5, top: 15),
-              child: Container(
+              child: SizedBox(
                 height: MediaQuery
                     .of(context)
                     .size
                     .height * .3,
                 child: ListView.separated(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => GestureDetector(
                     onTap: ()

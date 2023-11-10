@@ -13,7 +13,7 @@ class SplashViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         DefaultTextStyle(
-          style: TextStyle(fontSize: 60, fontFamily: 'Gara'),
+          style: const TextStyle(fontSize: 60, fontFamily: 'Gara'),
           child: AnimatedTextKit(
             animatedTexts: [
               WavyAnimatedText('K o t o b i', textAlign: TextAlign.center),
